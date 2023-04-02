@@ -1,0 +1,67 @@
+<!-- Toolbar -->
+<div class="top-bar" role="banner">
+<nav class=" toolbar navbar navbar-expand-lg navbar-light bg-light ">
+        <a class="logo">
+            <img class="logo-img" alt="Logo" src="assets/images/farm.png" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto"> 
+          <li class="nav-item">
+            <a class="nav-link" (click)="navigateToabout()">ABOUT</a>
+          </li>
+          <li  class="nav-item">
+            <a class="nav-link" (click)="navigateToServ()" >OUR SERVICES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="navigateToContactUs()">CONTACT US</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="goToLogIn()">LOG IN</a>
+          </li>
+        </ul>
+        <div class="spacer">
+        </div>
+        <button (click)="goToSignUp()"class="cta">
+          <span class="hover-underline-animation"> SIGN UP</span>
+          <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
+            <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+          </svg>
+        </button>
+      </div>
+        
+
+<!-- 
+<div class="toolbar" role="banner">
+    
+
+  <div class="logo">
+      <img class="logo-img" alt="Logo" src="assets/images/farm.png" />
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  </div>     
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <nav>
+        <a href="" target="_blank" rel="noopener"> ABOUT</a>
+        <a href="" target="_blank" rel="noopener"> OUR SERVICES</a>
+        <a href="" target="_blank" rel="noopener"> CONTACT US</a>     
+        <a href="" target="_blank" rel="noopener"> LOG IN</a>  
+    </nav>
+     </div>
+  
+    <div class="spacer">
+    </div>
+    <nav>
+
+        <button class="cta">
+            <span class="hover-underline-animation"> SIGN UP</span>
+            <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
+                <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+            </svg>
+        </button>
+
+    </nav>
+</div> -->

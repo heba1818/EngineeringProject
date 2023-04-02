@@ -1,0 +1,31 @@
+
+@media only screen and (min-width: 300px){
+  footer {
+  
+    width: 100%;
+    background-color: #ebebe1;
+    text-align: center;
+    line-height: 50px;
+    padding: 30px 0;
+  }
+
+  /* footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 378px;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    display: block;
+} */
+
+  p{
+    color: rgb(2, 87, 22);
+  }
+
+  }

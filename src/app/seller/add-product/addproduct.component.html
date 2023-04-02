@@ -1,0 +1,62 @@
+<div class="add-container">
+ <div class="container">
+  <div class="card">
+
+    <ul>
+      <li *ngFor="let product of products">{{ product.name }} - {{ product.description }} - {{ product.price }}</li>
+    </ul>
+    <a class="addproduct">Add Product</a>
+    <form (submit)="onSubmit($event)">
+
+      <div class="inputBox">
+        <input type="text" [(ngModel)]="product.name" name="name" required="required" />
+        <span>PRODUCT'S Name:</span>
+      </div>
+
+
+      <div class="inputBox">
+        <input type="text" [(ngModel)]="product.description" name="description"required="required">
+        <span>Description:</span>
+      </div>
+      <div class="inputBox">
+        <input type="text" [(ngModel)]="product.amount" name="amount"required="required">
+        <span>Amount:</span>
+      </div>
+
+      <div class="inputBox">
+        <input  type="number"  [(ngModel)]="product.price" name="price" required="required" />
+        <span>Price:</span>
+      </div>
+
+      <div class="inputBox"> 
+        <input type="text" placeholder="DATE OF PUBLISH"
+        onfocus="(this.type='date')"
+        onblur="(this.type='text')">
+      </div>
+
+      <div class=" radiobuttom ">
+        <label for="quality">Product Quality:</label>
+        <label>
+          <input type="radio" id="goodQuality" name="quality" value="goodQuality">GOOD
+        </label>
+        <label>
+          <input type="radio" id="averageQuality" name="quality" value="averageQuality">AVERAGE
+        </label>
+        <label>
+          <input type="radio" id="poorQuality" name="quality" value="poorQuality">POOR
+        </label>
+      </div>
+      <div class="inputBox">
+        <input type="file" accept="image/*" id="fileInput" (change)="onFileSelected($event)" />
+      </div>
+      
+
+      <button class="enter" type="submit">Add Product</button>
+    </form>
+   </div>
+  </div>
+  </div>
+
+         
+  
+  
