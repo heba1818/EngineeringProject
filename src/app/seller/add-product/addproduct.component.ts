@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Product } from './product';
 import { ProductService } from '../product-list/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addproduct',
@@ -12,7 +13,7 @@ export class AddproductComponent {
 
   @Output() addProduct: EventEmitter<Product> = new EventEmitter<Product>();
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private router:Router) {}
 
   onSubmit(event: Event) {
     event.preventDefault(); // prevent default form submission behavior
@@ -37,5 +38,17 @@ export class AddproductComponent {
       };
     }
   }
+  showMyPage = false;
+
+  goToProductList() {
+    this.router.navigate(['/productlist']);
+    this.showMyPage = !this.showMyPage;
+  }
+
+  goToWelcome() {
+    this.router.navigate(['/seller']);
+    this.showMyPage = !this.showMyPage;
+  }
+
   
 }

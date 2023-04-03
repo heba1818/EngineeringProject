@@ -1,7 +1,22 @@
-
+<div class="is-mobile">
 <div class="list-container">
   <div class="cont">
-    <h2>Product List</h2>
+    <h1>Product List</h1>
+    <div class="buttons-container">
+
+      <a class="fancy" (click)="goToWelcome()">
+        <span class="top-key"></span>
+        <span class="text">Main Page</span>
+        <span class="bottom-key-1"></span>
+        <span class="bottom-key-2"></span>
+      </a>
+      <a class="fancy" (click)="goToAddProduct()" >
+        <span class="top-key"></span>
+        <span class="text">Add new Offer</span>
+        <span class="bottom-key-1"></span>
+        <span class="bottom-key-2"></span>
+      </a>
+    </div>
     <div class="card-container">
       <mat-card *ngFor="let product of products" class="product-card">
         <mat-card-header>
@@ -13,9 +28,11 @@
           {{ product.description }}
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button>Buy Now</button>
+          <button mat-button (click)="removeProduct(product)">Remove</button>
         </mat-card-actions>
+        
       </mat-card>
     </div>
   </div>
   </div>
+</div>

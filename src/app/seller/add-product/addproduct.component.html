@@ -1,7 +1,22 @@
 <div class="add-container">
- <div class="container">
-  <div class="card">
+ <div class="cont">
+  <div class="buttons-container">
 
+    <a class="fancy" (click)="goToWelcome()">
+      <span class="top-key"></span>
+      <span class="text">Main Page</span>
+      <span class="bottom-key-1"></span>
+      <span class="bottom-key-2"></span>
+    </a>
+    <a class="fancy" (click)="goToProductList()" >
+      <span class="top-key"></span>
+      <span class="text">Product List</span>
+      <span class="bottom-key-1"></span>
+      <span class="bottom-key-2"></span>
+    </a>
+  </div>
+
+  <div class="card">
     <ul>
       <li *ngFor="let product of products">{{ product.name }} - {{ product.description }} - {{ product.price }}</li>
     </ul>

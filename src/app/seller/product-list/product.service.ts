@@ -19,4 +19,14 @@ export class ProductService {
     this.products.push(product);
     localStorage.setItem('products', JSON.stringify(this.products));
   }
+
+removeProduct(product: Product) {
+  const index = this.products.indexOf(product);
+  if (index >= 0) {
+    this.products.splice(index, 1);
+    localStorage.setItem('products', JSON.stringify(this.products));
+  }
+}
+
+  
 }

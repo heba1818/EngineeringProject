@@ -18,8 +18,6 @@ export class SellerComponent implements OnInit{
     });
   }
 
-
-
 showMyPage = false;
 
 goToAddProduct() {
