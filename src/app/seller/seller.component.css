@@ -1,25 +1,39 @@
 
-  .welcome-container {
+.welcome-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     padding: 0 50px;
-  }
-  
+    background-color: #F7FBF3;
+}
+
   .welcome-text {
     font-size: 50px;
+    margin-left: 200px;
   }
+  h3{
+    display: block;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+
+  }
+
   .buttons-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    margin-right: 200px;
   }
   
   .fancy {
+    height: 90px;
+    width: 300px;
     background-color: transparent;
-    border: 2px solid #000;
+    border: 2px solid #808080;
     border-radius: 0;
     box-sizing: border-box;
     color: #fff;
@@ -45,7 +59,7 @@
     content: " ";
     width: 1.5625rem;
     height: 2px;
-    background: black;
+    background: #808080;
     top: 50%;
     left: 1.5em;
     position: absolute;
@@ -67,7 +81,7 @@
    }
    
    .fancy .top-key {
-    height: 2px;
+    height: px;
     width: 1.5625rem;
     top: -2px;
     left: 0.625rem;
@@ -98,7 +112,7 @@
    
    .fancy:hover {
     color: white;
-    background: black;
+    background: #B4B7B1;
    }
    
    .fancy:hover::before {

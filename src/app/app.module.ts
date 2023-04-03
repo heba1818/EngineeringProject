@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,7 +45,8 @@ import { ProductListComponent } from './seller/product-list/product-list.compone
      CollapseModule.forRoot(),
      BsDropdownModule.forRoot(),
      RouterModule.forRoot([]),
-     FormsModule
+     FormsModule,
+     MatButtonModule
   ],
   exports: [
     MatToolbarModule,
