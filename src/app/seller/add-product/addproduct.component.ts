@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./addproduct.component.css']
 })
 export class AddproductComponent {
-  product: Product = new Product('', '', '', 0, new Date(), '', '');
+  product: Product = new Product('', '', '', 0, new Date(), '', '',0);
 
   @Output() addProduct: EventEmitter<Product> = new EventEmitter<Product>();
 
@@ -19,7 +19,7 @@ export class AddproductComponent {
     event.preventDefault(); // prevent default form submission behavior
     this.productService.addProduct(this.product); // add the new product to the product list
     this.addProduct.emit(this.product); // emit the addProduct event with the new product
-    this.product = new Product('', '','', 0, new Date(), '', ''); // reset the form
+    this.product = new Product('', '','', 0, new Date(), '', '',0); // reset the form
     
   }  
   products: Product[] = [];

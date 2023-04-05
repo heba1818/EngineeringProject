@@ -6,10 +6,13 @@ export class Product {
     datePublished : Date;
     quality : string;
     image: string;
+    quantity: number; // new property
+
   
     constructor(name: string, description: string,amount:string, price: number, datePublished : Date,
       quality : string,
-      image: string) {
+      image: string,    quantity: number // new parameter
+      ) {
       this.name = name;
       this.description = description;
       this.amount = amount;
@@ -17,5 +20,6 @@ export class Product {
       this.datePublished = datePublished;
       this.quality = quality;
       this.image = image;
+      this.quantity = quantity;
     }
   }

@@ -24,7 +24,7 @@ export class SignupComponent  implements OnInit{
         this.router.navigate(['/seller'], { queryParams: { name } });
         break;
       case 'buyer':
-        this.router.navigate(['/buyer-page']);
+        this.router.navigate(['/buyer'],{ queryParams: { name } });
         break;
       case 'logistic':
         this.router.navigate(['/logistic-page']);

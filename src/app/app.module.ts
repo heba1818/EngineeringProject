@@ -21,6 +21,9 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { AddproductComponent } from './seller/add-product/addproduct.component';
 import { ProductListComponent } from './seller/product-list/product-list.component';
+import { BuyerComponent } from './buyer/buyer.component';
+import { ListProductComponent } from './buyer/list-product/list-product.component';
+import { ListOrderComponent } from './buyer/list-order/list-order.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { ProductListComponent } from './seller/product-list/product-list.compone
     SignupComponent,
     LoginComponent,
     AddproductComponent,
-    ProductListComponent
+    ProductListComponent,
+    BuyerComponent,
+    ListProductComponent,
+    ListOrderComponent
   ],
   imports: [
     BrowserModule,

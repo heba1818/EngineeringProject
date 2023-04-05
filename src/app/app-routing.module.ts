@@ -6,7 +6,9 @@ import { LoginComponent } from './login/login.component';
 import { AddproductComponent } from './seller/add-product/addproduct.component';
 import { ProductListComponent } from './seller/product-list/product-list.component';
 import { SellerComponent } from './seller/seller.component';
-
+import { BuyerComponent } from './buyer/buyer.component';
+import { ListProductComponent } from './buyer/list-product/list-product.component';
+import { ListOrderComponent } from './buyer/list-order/list-order.component';
 const routes: Routes = [
   
   { path: 'body', component: BodyComponent },
@@ -15,6 +17,9 @@ const routes: Routes = [
   { path: 'addproduct', component: AddproductComponent },
   { path: 'productlist', component: ProductListComponent },
   { path: 'seller', component: SellerComponent },
+  { path: 'buyer',component:BuyerComponent},
+  { path: 'listproduct', component:ListProductComponent},
+  { path: 'listorder', component:ListOrderComponent}
 ];
 
 @NgModule({
