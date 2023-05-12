@@ -5,24 +5,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
-  private user: any;
+  private url = 'http://localhost/engProj/test.php';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  public setUser(user: any) {
-    this.user = user;
-    
+  insertData(data: any) {
+    return this.http.post(this.url, data);
   }
-
-  public getUser() {
-    return this.user;
-  }
-
-
-  public saveUser(user: any) {
-    const url = 'http://localhost/engProj/test.php';
-    return this.http.post(url, user);
-  }
-  
 }
-
