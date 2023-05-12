@@ -4,47 +4,46 @@
         <a class="singup">Sign Up</a>
         
         <div class="inputBox">
-          <input type="text" name="email" required>
+          <input type="text" name="email" [(ngModel)]="email" required>
           <span>Email</span>
         </div>
         <div class="inputBox">
-          <input type="text" name="name" required>
+          <input type="text" name="name" [(ngModel)]="name" required>
           <span>Name</span>
         </div>
         <div class="inputBox">
-          <input type="text" name="surname" required>
+          <input type="text" name="surname" [(ngModel)]="surname" required>
           <span>Surname</span>
         </div>
         <div class="inputBox">
-          <input type="tel" name="phonenumber" required>
+          <input type="tel" name="phonenumber" [(ngModel)]="phonenumber" required>
           <span>Phone number</span>
         </div>
         <div class="inputBox">
-          <input type="text" name="coregisterno" required>
+          <input type="text" name="coregisterno" [(ngModel)]="coregisterno" required>
           <span>Company register no</span>
         </div>
         <div class="inputBox">
           <p>END OF COMPANY'S REGISTER NO.</p>
-          <input type="date" name="date" required>
+          <input type="date" name="date" [(ngModel)]="date" required>
         </div>
         <div class="inputBox">
-          <input type="password" name="password" required>
+          <input type="password" name="password" [(ngModel)]="password" required>
           <span>Password</span>
         </div>
         <div class="radiobuttom">
           <label>
-            <input type="radio" name="selectedoption" value="seller" required> SELLER
+            <input type="radio" name="selectedoption" [(ngModel)]="selectedOption" value="seller" required> SELLER
           </label>
           <label>
-            <input type="radio" name="selectedoption" value="buyer" required> BUYER
+            <input type="radio" name="selectedoption" [(ngModel)]="selectedOption" value="buyer" required> BUYER
           </label>
           <label>
-            <input type="radio" name="selectedoption" value="logistic" required> LOGISTIC CO
+            <input type="radio" name="selectedoption" [(ngModel)]="selectedOption" value="logistic" required> LOGISTIC CO
           </label>
         </div>
         <button class="enter" (click)="onEnter()">Enter</button>
-
     </div>
 </div>
-</div>
 
+</div>

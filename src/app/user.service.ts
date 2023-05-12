@@ -11,14 +11,18 @@ export class UserService {
 
   public setUser(user: any) {
     this.user = user;
+    
   }
 
   public getUser() {
     return this.user;
   }
 
+
   public saveUser(user: any) {
-    return this.http.post('http://localhost/engProj/test.php', user);
+    const url = 'http://localhost/engProj/test.php';
+    return this.http.post(url, user);
   }
+  
 }
 
