@@ -2,61 +2,47 @@
   <div class="container">
     <div class="card">
         <a class="singup">Sign Up</a>
+        
         <div class="inputBox">
-            <input type="text" required="required">
-            <span class="user">Email</span>
-        </div>
-
-        <div class="inputBox">
-            <input id="name" ype="text" required="required">
-            <span>Name</span>
-        </div>
-
-        <div class="inputBox">
-            <input type="text" required="required">
-            <span>Surname</span>
+          <input type="text" name="email" required>
+          <span>Email</span>
         </div>
         <div class="inputBox">
-            <input type="tel" required="required">
-            <span>Phone number</span>
-        </div>
-
-        <div class="inputBox">
-            <input type="text" required="required">
-            <span>Company register no</span>
+          <input type="text" name="name" required>
+          <span>Name</span>
         </div>
         <div class="inputBox">
-            <p>END OF COMPANY'S RESGISTER NO.</p>
-            <input type="date" required="required">
+          <input type="text" name="surname" required>
+          <span>Surname</span>
         </div>
         <div class="inputBox">
-            <input type="password" required="required">
-            <span>Password</span>
+          <input type="tel" name="phonenumber" required>
+          <span>Phone number</span>
+        </div>
+        <div class="inputBox">
+          <input type="text" name="coregisterno" required>
+          <span>Company register no</span>
+        </div>
+        <div class="inputBox">
+          <p>END OF COMPANY'S REGISTER NO.</p>
+          <input type="date" name="date" required>
+        </div>
+        <div class="inputBox">
+          <input type="password" name="password" required>
+          <span>Password</span>
         </div>
         <div class="radiobuttom">
-            <label>
-              <input type="radio" name="1" value="seller" [(ngModel)]="selectedOption" required> SELLER
-            </label>
-            <label>
-              <input type="radio" name="1" value="buyer" [(ngModel)]="selectedOption" required> BUYER
-            </label>
-            <label>
-              <input type="radio" name="1" value="logistic" [(ngModel)]="selectedOption" required> LOGISTIC CO
-            </label>
-          </div>
-          
-        <div class="privacy-policy-container">
-            <label>
-              <input type="checkbox" name="privacy_policy" required>
-              I ACCEPT THE PRIVACY POLICY
- 
-            </label>
-          </div>
-          
-
-
-          <button class="enter" (click)="onEnter()">Enter</button>
-
+          <label>
+            <input type="radio" name="selectedoption" value="seller" required> SELLER
+          </label>
+          <label>
+            <input type="radio" name="selectedoption" value="buyer" required> BUYER
+          </label>
+          <label>
+            <input type="radio" name="selectedoption" value="logistic" required> LOGISTIC CO
+          </label>
+        </div>
+        <button class="enter" (click)="onEnter()">Enter</button>
 
     </div>
 </div>

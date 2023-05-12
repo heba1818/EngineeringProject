@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-signup',
@@ -9,32 +9,39 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./signup.component.css']
 })
 
-export class SignupComponent  implements OnInit{
+export class SignupComponent {
+
   selectedOption!: string;
+  name!: string;
+  surname!: string;
+  email!: string;
+  phonenumber!: string;
+  coregisterno!: string;
+  date!: string;
+  password!: string;
 
-  constructor(private router: Router) {}
-
-
-  ngOnInit(): void {
-  }
+  constructor(private router: Router, private http: HttpClient, private userService: UserService) {}
 
   onEnter() {
-    const name = (<HTMLInputElement>document.getElementById('name')).value;
+    const postData = {
+      name: this.name,
+      surname: this.surname,
+      email: this.email,
+      phonenumber: this.phonenumber,
+      coregisterno: this.coregisterno,
+      date: this.date,
+      password: this.password,
+      selectedoption: this.selectedOption
+    };
 
-    switch (this.selectedOption) {
-      case 'seller':
-        this.router.navigate(['/seller'], { queryParams: { name } });
-        break;
-      case 'buyer':
-        this.router.navigate(['/buyer'],{ queryParams: { name } });
-        break;
-      case 'logistic':
-        this.router.navigate(['/logistic-page']);
-        break;
-      default:
-        // handle error case
-    }
+    this.http.post('http://localhost/engProj/test.php', postData)
+      .subscribe(response => {
+        console.log(response);
+        this.userService.setUser(response);
+        this.router.navigate(['/success']);
+      }, error => {
+        console.log(error);
+      });
   }
-  
 
 }

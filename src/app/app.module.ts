@@ -24,6 +24,7 @@ import { ProductListComponent } from './seller/product-list/product-list.compone
 import { BuyerComponent } from './buyer/buyer.component';
 import { ListProductComponent } from './buyer/list-product/list-product.component';
 import { ListOrderComponent } from './buyer/list-order/list-order.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ListOrderComponent } from './buyer/list-order/list-order.component';
      BsDropdownModule.forRoot(),
      RouterModule.forRoot([]),
      FormsModule,
-     MatButtonModule
+     MatButtonModule,
+     HttpClientModule
   ],
   exports: [
     MatToolbarModule,
