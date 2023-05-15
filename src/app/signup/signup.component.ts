@@ -23,6 +23,26 @@ export class SignupComponent {
   constructor(private router: Router, private http: HttpClient, private userService: UserService) {}
 
   onEnter() {
+    if (!this.email || !this.name || !this.surname || !this.phonenumber || !this.coregisterno ||
+       !this.date || !this.password || !this.selectedoption) {
+      alert("Please fill in all the required fields.");
+      return;
+    }
+
+    const name = this.name;
+    switch (this.selectedoption) {
+      case 'seller':
+        this.router.navigate(['/seller'], { queryParams: { name } });
+        break;
+      case 'buyer':
+        this.router.navigate(['/buyer'],{ queryParams: { name } });
+        break;
+      case 'logistic':
+        this.router.navigate(['/logistic-page']);
+        break;
+      default:
+        // handle error case
+    }
     const postData = new HttpParams()
       .set('email', this.email)
       .set('name', this.name)
@@ -33,6 +53,9 @@ export class SignupComponent {
       .set('password', this.password)
       .set('selectedoption', this.selectedoption);
 
-    this.userService.insertData(postData).subscribe(response => console.log(response));
+      this.userService.insertData(postData).subscribe(response => {
+        
+      });
+    
   }
 }

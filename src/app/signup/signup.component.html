@@ -33,7 +33,7 @@
         </div>
         <div class="radiobuttom">
           <label>
-            <input type="radio" name="selectedoption" [(ngModel)]="selectedoption" value="seller" required> SELLER
+            <input type="radio" name="selectedoption" [(ngModel)]="selectedoption" value="seller" required> SELLER           
           </label>
           <label>
             <input type="radio" name="selectedoption" [(ngModel)]="selectedoption" value="buyer" required> BUYER
@@ -42,8 +42,14 @@
             <input type="radio" name="selectedoption" [(ngModel)]="selectedoption" value="logistic" required> LOGISTIC CO
           </label>
         </div>
+        <div class="privacy-policy-container">
+          <label>
+            <input type="checkbox" name="privacy_policy" required>
+            I ACCEPT THE PRIVACY POLICY
+
+          </label>
+        </div>
         <button class="enter" (click)="onEnter()">Enter</button>
     </div>
 </div>
-
 </div>

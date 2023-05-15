@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { Product } from './product';
 import { ProductService } from '../product-list/product.service';
 import { Router } from '@angular/router';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-addproduct',
@@ -9,24 +10,44 @@ import { Router } from '@angular/router';
   styleUrls: ['./addproduct.component.css']
 })
 export class AddproductComponent {
-  product: Product = new Product('', '', '', 0, new Date(), '', '',0);
+  product: Product = new Product('', '', '', 0, new Date(), '', '', 0);
 
-  @Output() addProduct: EventEmitter<Product> = new EventEmitter<Product>();
-
-  constructor(private productService: ProductService, private router:Router) {}
+  constructor(private httpClient: HttpClient, private productService: ProductService, private router: Router) {}
 
   onSubmit(event: Event) {
-    event.preventDefault(); // prevent default form submission behavior
-    this.productService.addProduct(this.product); // add the new product to the product list
-    this.addProduct.emit(this.product); // emit the addProduct event with the new product
-    this.product = new Product('', '','', 0, new Date(), '', '',0); // reset the form
-    
-  }  
+    event.preventDefault();
+
+    this.productService.addProduct(this.product);
+
+    const postData = new HttpParams()
+      .set('name', this.product.name)
+      .set('description', this.product.description)
+      .set('amount', this.product.amount)
+      .set('price', this.product.price.toString())
+      .set('datePublished', this.product.datePublished.toString())
+      .set('quality', this.product.quality)
+      .set('image', this.product.image)
+      .set('quantity', this.product.quantity.toString());
+
+    this.httpClient.post('http://localhost/engProj/save_product.php', postData)
+      .subscribe(
+        (response) => {
+          console.log(response); // Product saved successfully
+        },
+        (error) => {
+          console.error(error); // Error saving product
+        }
+      );
+
+    this.product = new Product('', '', '', 0, new Date(), '', '', 0);
+  }
+
   products: Product[] = [];
 
   onAddProduct(product: Product) {
     this.products.push(product);
   }
+
   onFileSelected(event: any) {
     const file: File = event.target.files[0];
     if (file) {
@@ -38,17 +59,12 @@ export class AddproductComponent {
       };
     }
   }
-  showMyPage = false;
 
   goToProductList() {
     this.router.navigate(['/productlist']);
-    this.showMyPage = !this.showMyPage;
   }
 
   goToWelcome() {
     this.router.navigate(['/seller']);
-    this.showMyPage = !this.showMyPage;
   }
-
-  
 }
