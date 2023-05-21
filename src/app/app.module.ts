@@ -25,6 +25,7 @@ import { BuyerComponent } from './buyer/buyer.component';
 import { ListProductComponent } from './buyer/list-product/list-product.component';
 import { ListOrderComponent } from './buyer/list-order/list-order.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProductListComponent,
     BuyerComponent,
     ListProductComponent,
-    ListOrderComponent
+    ListOrderComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,

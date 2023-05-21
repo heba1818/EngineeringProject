@@ -2,54 +2,53 @@
   <div class="container">
     <div class="card">
         <a class="singup">Sign Up</a>
-        
-        <div class="inputBox">
-          <input type="text" name="email" [(ngModel)]="email" required>
-          <span>Email</span>
-        </div>
-        <div class="inputBox">
-          <input type="text" name="name" [(ngModel)]="name" required>
-          <span>Name</span>
-        </div>
-        <div class="inputBox">
-          <input type="text" name="surname" [(ngModel)]="surname" required>
-          <span>Surname</span>
-        </div>
-        <div class="inputBox">
-          <input type="tel" name="phonenumber" [(ngModel)]="phonenumber" required>
-          <span>Phone number</span>
-        </div>
-        <div class="inputBox">
-          <input type="text" name="coregisterno" [(ngModel)]="coregisterno" required>
-          <span>Company register no</span>
-        </div>
-        <div class="inputBox">
-          <p>END OF COMPANY'S REGISTER NO.</p>
-          <input type="date" name="date" [(ngModel)]="date" required>
-        </div>
-        <div class="inputBox">
-          <input type="password" name="password" [(ngModel)]="password" required>
-          <span>Password</span>
-        </div>
-        <div class="radiobuttom">
-          <label>
-            <input type="radio" name="selectedoption" [(ngModel)]="selectedoption" value="seller" required> SELLER           
-          </label>
-          <label>
-            <input type="radio" name="selectedoption" [(ngModel)]="selectedoption" value="buyer" required> BUYER
-          </label>
-          <label>
-            <input type="radio" name="selectedoption" [(ngModel)]="selectedoption" value="logistic" required> LOGISTIC CO
-          </label>
-        </div>
-        <div class="privacy-policy-container">
-          <label>
-            <input type="checkbox" name="privacy_policy" required>
-            I ACCEPT THE PRIVACY POLICY
-
-          </label>
-        </div>
-        <button class="enter" (click)="onEnter()">Enter</button>
+           
+      <div class="inputBox">
+        <input type="text" name="email" [(ngModel)]="user.email" required>
+        <span>Email</span>
+      </div>
+      <div class="inputBox">
+        <input type="text" name="name" [(ngModel)]="user.name" required>
+        <span>Name</span>
+      </div>
+      <div class="inputBox">
+        <input type="text" name="surname" [(ngModel)]="user.surname" required>
+        <span>Surname</span>
+      </div>
+      <div class="inputBox">
+        <input type="tel" name="phonenumber" [(ngModel)]="user.phonenumber" required>
+        <span>Phone number</span>
+      </div>
+      <div class="inputBox">
+        <input type="text" name="coregisterno" [(ngModel)]="user.coregisterno" required>
+        <span>Company register no</span>
+      </div>
+      <div class="inputBox">
+        <p>END OF COMPANY'S REGISTER NO.</p>
+        <input type="date" name="date" [(ngModel)]="user.date" required>
+      </div>
+      <div class="inputBox">
+        <input type="password" name="password" [(ngModel)]="user.password" required>
+        <span>Password</span>
+      </div>
+      <div class="radiobuttom">
+        <label>
+          <input type="radio" name="selectedoption" [(ngModel)]="user.selectedoption" value="seller" required> SELLER           
+        </label>
+        <label>
+          <input type="radio" name="selectedoption" [(ngModel)]="user.selectedoption" value="buyer" required> BUYER
+        </label>
+        <label>
+          <input type="radio" name="selectedoption" [(ngModel)]="user.selectedoption" value="logistic" required> LOGISTIC CO
+        </label>
+      </div>
+      <div class="privacy-policy-container">
+        <label>
+          <input type="checkbox" name="privacy_policy" required>
+          I ACCEPT THE PRIVACY POLICY
+        </label>
+      </div>
+      <button class="enter" (click)="onEnter($event)">Enter</button>
     </div>
-</div>
+  </div>
 </div>

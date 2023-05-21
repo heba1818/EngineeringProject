@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from './user.service';
+import { User } from './user';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { UserService } from '../user.service';
+
 
 @Component({
   selector: 'app-signup',
@@ -11,26 +13,32 @@ import { UserService } from '../user.service';
 
 export class SignupComponent {
 
-  email!: string;
-  name!: string;
-  surname!: string;
-  phonenumber!: string;
-  coregisterno!: string;
-  date!: string;
-  password!: string;
-  selectedoption!:string;
+  user: User = new User('','','','','',new Date(),'','');
 
-  constructor(private router: Router, private http: HttpClient, private userService: UserService) {}
 
-  onEnter() {
-    if (!this.email || !this.name || !this.surname || !this.phonenumber || !this.coregisterno ||
-       !this.date || !this.password || !this.selectedoption) {
+  // email!: string;
+  // name!: string;
+  // surname!: string;
+  // phonenumber!: string;
+  // coregisterno!: string;
+  // date!: string;
+  // password!: string;
+  // selectedoption!:string;
+
+  constructor(private httpClient: HttpClient,private router: Router, private http: HttpClient, private userService: UserService) {}
+
+  onEnter(event: Event) {
+        event.preventDefault();
+
+        this.userService.addUser(this.user);
+    if (!this.user.email || !this.user.name || !this.user.surname || !this.user.phonenumber || !this.user.coregisterno ||
+       !this.user.date || !this.user.password || !this.user.selectedoption) {
       alert("Please fill in all the required fields.");
       return;
     }
 
-    const name = this.name;
-    switch (this.selectedoption) {
+    const name = this.user.name;
+    switch (this.user.selectedoption) {
       case 'seller':
         this.router.navigate(['/seller'], { queryParams: { name } });
         break;
@@ -44,18 +52,50 @@ export class SignupComponent {
         // handle error case
     }
     const postData = new HttpParams()
-      .set('email', this.email)
-      .set('name', this.name)
-      .set('surname', this.surname)
-      .set('phonenumber', this.phonenumber)
-      .set('coregisterno', this.coregisterno)
-      .set('date', this.date)
-      .set('password', this.password)
-      .set('selectedoption', this.selectedoption);
+      .set('email', this.user.email)
+      .set('name', this.user.name)
+      .set('surname', this.user.surname)
+      .set('phonenumber', this.user.phonenumber)
+      .set('coregisterno', this.user.coregisterno)
+      .set('date', this.user.date.toString())
+      .set('password', this.user.password)
+      .set('selectedoption', this.user.selectedoption);
+
+         this.httpClient.post('http://localhost/engProj/test.php', postData)
+      .subscribe(
+        (response) => {
+          console.log(response); // Product saved successfully
+        },
+        (error) => {
+          console.error(error); // Error saving product
+        }
+      );
+
+      this.user = new User('','','','','',new Date(),'','');
+
+   
 
       this.userService.insertData(postData).subscribe(response => {
         
       });
     
+    }
+    users : User[] = [];
+
+    onAddUser(user: User){
+      this.users.push(user);
+    }
+    
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        // Do something with the image data
+        console.log(reader.result);
+      };
+    }
   }
+    
 }
