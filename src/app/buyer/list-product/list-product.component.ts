@@ -26,16 +26,21 @@ export class ListProductComponent implements OnInit{
     this.router.navigate(['/buyer']);
     this.showMyPage = !this.showMyPage;
   }
-
-  addToCart(product: Product) {
-    // Clone the product object
-    const productClone: Product = { ...product };
-    // Add the cloned product to the cart
-    this.cartService.addToCart(productClone);
+  goToOrderList() {
+    this.router.navigate(['/listorder']);
+    this.showMyPage = !this.showMyPage;
   }
+
+  addToCart(product: any) {
+    this.cartService.addToCart(product);
+  }
+  // addToCart(product: Product) {
+  //   // Clone the product object
+  //   const productClone: Product = { ...product };
+  //   // Add the cloned product to the cart
+  //   this.cartService.addToCart(productClone);
+  // }
   addToOrders(product: Product) {
     this.cartService.addToCart(product);
   }
-  
-
 }

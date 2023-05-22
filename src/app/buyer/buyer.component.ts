@@ -24,4 +24,9 @@ goToProductList() {
   this.showMyPage = !this.showMyPage;
 }
 
+goToOrderList() {
+  this.router.navigate(['/listorder']);
+  this.showMyPage = !this.showMyPage;
+}
+
 }

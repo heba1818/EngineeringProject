@@ -10,6 +10,7 @@ import { BuyerComponent } from './buyer/buyer.component';
 import { ListProductComponent } from './buyer/list-product/list-product.component';
 import { ListOrderComponent } from './buyer/list-order/list-order.component';
 import { UserListComponent } from './user-list/user-list.component';
+
 const routes: Routes = [
   
   { path: 'body', component: BodyComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'listproduct', component:ListProductComponent},
   { path: 'listorder', component:ListOrderComponent},
   { path: 'user-list', component: UserListComponent },
+
   
 ];
 

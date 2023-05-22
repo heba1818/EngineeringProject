@@ -1,11 +1,32 @@
 <div class="is-mobile">
-    <div class="list-container">
-      <!-- Your other code here -->
+  <div class="list-container">
+    <div class="cont">
+      <h1>MY ORDERS</h1>
+      <div class="buttons-container">
+        <a class="fancy" (click)="goToWelcome()" >
+          <span class="top-key"></span>
+          <span class="text">Main Page</span>
+          <span class="bottom-key-1"></span>
+          <span class="bottom-key-2"></span>
+        </a>
+        <a class="fancy" (click)="goToOffers()" >
+          <span class="top-key"></span>
+          <span class="text">View offers</span>
+          <span class="bottom-key-1"></span>
+          <span class="bottom-key-2"></span>
+        </a>
+      </div>
       <div class="card-container">
-        <!-- <mat-card *ngFor="let product of products" class="product-card"> -->
-          <!-- Card content here -->
-        <!-- </mat-card> -->
+        <mat-card *ngFor="let product of orders" class="product-card">
+          <mat-card-header>
+            <mat-card-title>{{ product.name }}</mat-card-title>
+            <mat-card-subtitle>{{ product.price }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            {{ product.description }}
+          </mat-card-content>
+        </mat-card>
       </div>
     </div>
   </div>
-  
+</div>

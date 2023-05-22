@@ -43,23 +43,23 @@
         <span>Price:</span>
       </div>
 
-      <div class="inputBox"> 
-        <input type="text" placeholder="DATE OF PUBLISH"
-        onfocus="(this.type='date')"
-        onblur="(this.type='text')">
-      </div>
+    <div class="inputBox">
+  <input type="date" [(ngModel)]="product.datePublished" placeholder="DATE OF PUBLISH">
+</div>
+
 
       <div class=" radiobuttom ">
         <label for="quality">Product Quality:</label>
         <label>
-          <input type="radio" id="goodQuality" name="quality" value="goodQuality">GOOD
+          <input type="radio" name="quality" value="goodQuality" [(ngModel)]="product.quality">GOOD
         </label>
         <label>
-          <input type="radio" id="averageQuality" name="quality" value="averageQuality">AVERAGE
+          <input type="radio" name="quality" value="averageQuality" [(ngModel)]="product.quality">AVERAGE
         </label>
         <label>
-          <input type="radio" id="poorQuality" name="quality" value="poorQuality">POOR
+          <input type="radio" name="quality" value="poorQuality" [(ngModel)]="product.quality">POOR
         </label>
+        
       </div>
       <div class="inputBox">
         <input type="file" accept="image/*" id="fileInput" (change)="onFileSelected($event)" />
