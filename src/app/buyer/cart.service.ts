@@ -5,17 +5,26 @@ import { Product } from '../seller/add-product/product';
   providedIn: 'root'
 })
 export class CartService {
-
-  items: Product[] = [];
+  private storageKey = 'cartItems';
 
   constructor() { }
 
   addToCart(product: Product) {
-    this.items.push(product);
+    const items = this.getItemsFromStorage();
+    items.push(product);
+    this.setItemsToStorage(items);
   }
 
   getItems() {
-    return this.items;
+    return this.getItemsFromStorage();
   }
 
+  private getItemsFromStorage(): Product[] {
+    const itemsString = localStorage.getItem(this.storageKey);
+    return itemsString ? JSON.parse(itemsString) : [];
+  }
+
+  private setItemsToStorage(items: Product[]) {
+    localStorage.setItem(this.storageKey, JSON.stringify(items));
+  }
 }

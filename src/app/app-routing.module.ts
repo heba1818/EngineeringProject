@@ -10,6 +10,8 @@ import { BuyerComponent } from './buyer/buyer.component';
 import { ListProductComponent } from './buyer/list-product/list-product.component';
 import { ListOrderComponent } from './buyer/list-order/list-order.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { LogisticComponent } from './logistic/logistic.component';
+import { OffersComponent } from './logistic/offers/offers.component';
 
 const routes: Routes = [
   
@@ -23,8 +25,8 @@ const routes: Routes = [
   { path: 'listproduct', component:ListProductComponent},
   { path: 'listorder', component:ListOrderComponent},
   { path: 'user-list', component: UserListComponent },
-
-  
+  { path: 'logistic', component: LogisticComponent},
+  { path: 'offers', component: OffersComponent}
 ];
 
 @NgModule({
