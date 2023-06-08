@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'EngineeringProject';
+  title = 'MyFarm';
   showSignUp = false; // Add the showSignUp property
 
   constructor(public router: Router) {}

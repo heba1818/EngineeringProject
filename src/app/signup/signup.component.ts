@@ -46,7 +46,7 @@ export class SignupComponent {
         this.router.navigate(['/buyer'],{ queryParams: { name } });
         break;
       case 'logistic':
-        this.router.navigate(['/logistic-page']);
+        this.router.navigate(['/logistic']);
         break;
       default:
         // handle error case

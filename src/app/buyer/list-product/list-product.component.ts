@@ -34,12 +34,7 @@ export class ListProductComponent implements OnInit{
   addToCart(product: any) {
     this.cartService.addToCart(product);
   }
-  // addToCart(product: Product) {
-  //   // Clone the product object
-  //   const productClone: Product = { ...product };
-  //   // Add the cloned product to the cart
-  //   this.cartService.addToCart(productClone);
-  // }
+
   addToOrders(product: Product) {
     this.cartService.addToCart(product);
   }

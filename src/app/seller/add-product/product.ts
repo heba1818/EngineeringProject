@@ -7,6 +7,9 @@ export class Product {
     quality : string;
     image: string;
     quantity: number; // new property
+    isConfirmedOrder?: boolean;
+    
+
 
   
     constructor(name: string, description: string,amount:string, price: number, datePublished : Date,
